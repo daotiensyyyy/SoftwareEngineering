@@ -61,29 +61,23 @@ public class ManageStudent {
 	}
 
 	// lay ds dang ky hoc
-//	public List<RegistrationForm> getAllRegistration() {
-//		RegistrationForm rf = null;
-//		String sql = "select * from student_management.registration_form";
-//		connection = DBConnect.getJDBCConnection();
-//		try {
-//			listRF = new ArrayList<RegistrationForm>();
-//			preparedStatement = connection.prepareStatement(sql);
-//			resultSet = preparedStatement.executeQuery(sql);
-//			while (resultSet.next()) {
-//				rf = new RegistrationForm();
-//				rf.setCourse_id(resultSet.getString(1));
-//				rf.setStudent_code(resultSet.getString(2));
-//				rf.setSemester(resultSet.getString(3));
-//				rf.setRegistration_date(resultSet.getDate(4));
-//
-//				listRF.add(rf);
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		return listRF;
-//
-//	}
+	/*
+	 * public List<RegistrationForm> getAllRegistration() { RegistrationForm rf =
+	 * null; String sql = "select * from student_management.registration_form";
+	 * connection = DBConnect.getJDBCConnection(); try { listRF = new
+	 * ArrayList<RegistrationForm>(); preparedStatement =
+	 * connection.prepareStatement(sql); resultSet =
+	 * preparedStatement.executeQuery(sql); while (resultSet.next()) { rf = new
+	 * RegistrationForm(); rf.setCourse_id(resultSet.getString(1));
+	 * rf.setStudent_code(resultSet.getString(2));
+	 * rf.setSemester(resultSet.getString(3));
+	 * rf.setRegistration_date(resultSet.getDate(4));
+	 * 
+	 * listRF.add(rf); } } catch (Exception e) { e.printStackTrace(); } return
+	 * listRF;
+	 * 
+	 * }
+	 */
 
 	// dang ky hoc
 	public RegistrationForm register(RegistrationForm rf) throws SQLException {
@@ -155,6 +149,7 @@ public class ManageStudent {
 		return false;
 	}
 	
+	//them vao ds da chon
 	public boolean insert(String course_id){
 		getListCourse();
 		boolean check = checkExist(course_id);
@@ -166,6 +161,8 @@ public class ManageStudent {
 		}
 		return false;
 	}
+	
+	//xoa khoi ds da chon
 	public boolean delete(String course_id){
 		for (int i = 0; i < tmp.size(); i++) {
 			if(tmp.get(i).getCourse_id().equals(course_id)){
@@ -192,16 +189,6 @@ public class ManageStudent {
 		ManageStudent.tmp = tmp;
 	}
 	
-	public boolean checkDB(String student_code, String course_id) {
-		String sql = "" ;
-		try {
-			new DBConnect().doSQLScript(sql);
-		}catch(Exception e) {
-			System.out.println("error");
-			return false;
-		}
-		return true;
-	}
 
 	
 	public static void main(String[] args) throws SQLException {
@@ -212,7 +199,7 @@ public class ManageStudent {
 //		System.out.println(ms.getAllRegistration());
 //		System.out.println(ms.checkLogin("17130197", "123"));
 //		ms.register(rf);
-		System.out.println(ms.getByStudent_code("17130094"));
+//		System.out.println(ms.getByStudent_code("17130094"));
 //		ms.insert("214252");
 //		System.out.println(ms.tmp);
 //		System.out.println(ms.checkExist("214252"));

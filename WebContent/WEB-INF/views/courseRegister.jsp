@@ -148,19 +148,17 @@ input#course_name {
 				<tr>
 					<th>Mã môn học</th>
 					<th>Tên môn học</th>
-<!-- 					<th>Số tín chỉ</th> -->
 					<th>Thứ</th>
 					<th>Phòng học</th>
 					<th>Học kỳ</th>
 					<th>Bắt đầu</th>
-						<th>Kết thúc</th>
-					<!-- 					<th>Ngày bắt đầu</th> -->
-					<!-- 					<th>Ngày kết thúc</th> -->
+					<th>Kết thúc</th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-
+			
+				<!-- lay danh sach mon hoc va hien thi len bang -->
 				<c:forEach items="${lstCourse }" var="course">
 					<tr>
 						<td><input id="course_id" type="text" class="input"
@@ -202,18 +200,18 @@ input#course_name {
 					<tr>
 						<th>Mã môn học</th>
 						<th>Tên môn học</th>
-<!-- 						<th>Số tín chỉ</th> -->
+						<!-- <th>Số tín chỉ</th> -->
 						<th>Thứ</th>
 						<th>Phòng học</th>
 						<th>Học kỳ</th>
 						<th>Bắt đầu</th>
 						<th>Kết thúc</th>
-						<!-- 					<th>Ngày bắt đầu</th> -->
-						<!-- 					<th>Ngày kết thúc</th> -->
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
+				
+					<!-- danh sach mon hoc da chon -->
 					<c:forEach items="${lstCart }" var="cart">
 						<tr>
 							<td><input id="course_id" type="text" class="input"

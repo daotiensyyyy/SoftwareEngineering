@@ -148,27 +148,24 @@ input#course_name {
 				<tr>
 					<th>Mã môn học</th>
 					<th>Tên môn học</th>
-<!-- 					<th>Số tín chỉ</th> -->
 					<th>Thứ</th>
 					<th>Phòng học</th>
 					<th>Học kỳ</th>
 					<th>Bắt đầu</th>
-						<th>Kết thúc</th>
-					<!-- 					<th>Ngày bắt đầu</th> -->
-					<!-- 					<th>Ngày kết thúc</th> -->
+					<th>Kết thúc</th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-
+				<!-- hien thi cac mon hoc da dang ky theo mssv -->
 				<c:forEach items="${lst }" var="res">
 					<tr>
 						<td><input id="course_id" type="text" class="input"
 							value="${res.course_id}" name="course_id" readonly /></td>
 						<td><input id="course_name" type="text" class="input"
 							value="${res.course_name}" name="course_name" readonly /></td>
-<!-- 						<td><input id="credits" type="text" class="input" -->
-<%-- 							value="${course.course_credits}" name="credits" readonly /></td> --%>
+						<!-- <td><input id="credits" type="text" class="input" -->
+						<%-- value="${course.course_credits}" name="credits" readonly /></td> --%>
 						<td><input id="day" type="text" class="input"
 							value="${res.day}" name="day" readonly /></td>
 						<td><input id="room" type="text" class="input"

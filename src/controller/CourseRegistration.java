@@ -39,11 +39,9 @@ public class CourseRegistration extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
-//		request.getRequestDispatcher("/WEB-INF/views/courseRegister.jsp").forward(request, response);
 		HttpSession session = request.getSession(false);
 		UserAccount user = AppUtils.getLoginedUser(session);
-//		System.out.println(user);
-//		System.out.println(session);
+		//kiem tra da dang nhap chua
 		if (user != null) {
 			System.out.println(user);
 			List<Course> list = stm.getListCourse();
@@ -51,12 +49,11 @@ public class CourseRegistration extends HttpServlet {
 			// System.out.println(course_id);
 			stm.insert(course_id);
 			List<Course> list_cart = stm.getTmp();
-//			System.out.println(list);
 			request.setAttribute("lstCart", list_cart);
-//			System.out.println(list);
 			request.setAttribute("lstCourse", list);
 			request.getRequestDispatcher("/WEB-INF/views/courseRegister.jsp").forward(request, response);
 		} else {
+			//chua dang nhap quay lai trang dang nhap
 			response.sendRedirect("login");
 		}
 
