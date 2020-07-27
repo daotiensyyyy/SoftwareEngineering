@@ -3,25 +3,28 @@ package bean;
 import java.sql.Date;
 
 public class RegistrationForm {
-	private String course_id;
 	private String student_code;
+	private String course_id;
+	private String course_name;
+	private String day;
+	private String room;
 	private String semester;
-	private Date registration_date;
-	public RegistrationForm(String course_id, String student_code, String semester, Date registration_date) {
+	private String start_time;
+	private String end_time;
+	public RegistrationForm(String student_code, String course_id, String course_name, String day, String room,
+			String semester, String start_time, String end_time) {
 		super();
-		this.course_id = course_id;
 		this.student_code = student_code;
+		this.course_id = course_id;
+		this.course_name = course_name;
+		this.day = day;
+		this.room = room;
 		this.semester = semester;
-		this.registration_date = registration_date;
+		this.start_time = start_time;
+		this.end_time = end_time;
 	}
 	public RegistrationForm() {
 		
-	}
-	public String getCourse_id() {
-		return course_id;
-	}
-	public void setCourse_id(String course_id) {
-		this.course_id = course_id;
 	}
 	public String getStudent_code() {
 		return student_code;
@@ -29,22 +32,52 @@ public class RegistrationForm {
 	public void setStudent_code(String student_code) {
 		this.student_code = student_code;
 	}
+	public String getCourse_id() {
+		return course_id;
+	}
+	public void setCourse_id(String course_id) {
+		this.course_id = course_id;
+	}
+	public String getCourse_name() {
+		return course_name;
+	}
+	public void setCourse_name(String course_name) {
+		this.course_name = course_name;
+	}
+	public String getDay() {
+		return day;
+	}
+	public void setDay(String day) {
+		this.day = day;
+	}
+	public String getRoom() {
+		return room;
+	}
+	public void setRoom(String room) {
+		this.room = room;
+	}
 	public String getSemester() {
 		return semester;
 	}
 	public void setSemester(String semester) {
 		this.semester = semester;
 	}
-	public Date getRegistration_date() {
-		return registration_date;
+	public String getStart_time() {
+		return start_time;
 	}
-	public void setRegistration_date(Date registration_date) {
-		this.registration_date = registration_date;
+	public void setStart_time(String start_time) {
+		this.start_time = start_time;
+	}
+	public String getEnd_time() {
+		return end_time;
+	}
+	public void setEnd_time(String end_time) {
+		this.end_time = end_time;
 	}
 	@Override
 	public String toString() {
-		return "RegistrationForm [course_id=" + course_id + ", student_code=" + student_code + ", semester=" + semester
-				+ ", registration_date=" + registration_date + "]";
+		return "RegistrationForm [student_code=" + student_code + ", course_id=" + course_id + ", course_name="
+				+ course_name + ", day=" + day + ", room=" + room + ", semester=" + semester + ", start_time="
+				+ start_time + ", end_time=" + end_time + "]";
 	}
-	
 }

@@ -37,7 +37,7 @@
 										<img src="./Elearn_files/home_logo_1.png" alt="">
 									</div>
 									<div class="home_text">
-										<div class="home_title">Nong Lam University</div>
+										<div class="home_title">Đại học Nông Lâm TP.HCM</div>
 										<div class="home_subtitle">Maecenas rutrum viverra
 											sapien sed fermentum. Morbi tempor odio eget lacus tempus
 											pulvinar. Praesent vel nisl fermentum, gravida augue ut,

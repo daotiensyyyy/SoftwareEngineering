@@ -9,15 +9,15 @@ public class Course {
 	private String day;
 	private String room;
 	private String semester;
-	private Date start_time;
-	private Date end_time;
+	private String start_time;
+	private String end_time;
 	
 	public Course() {
 		
 	}
 
 	public Course(String course_id, String course_name, String course_credits, String day, String room, String semester,
-			Date start_time, Date end_time) {
+			String start_time, String end_time) {
 		super();
 		this.course_id = course_id;
 		this.course_name = course_name;
@@ -77,19 +77,19 @@ public class Course {
 		this.semester = semester;
 	}
 
-	public Date getStart_time() {
+	public String getStart_time() {
 		return start_time;
 	}
 
-	public void setStart_time(Date start_time) {
+	public void setStart_time(String start_time) {
 		this.start_time = start_time;
 	}
 
-	public Date getEnd_time() {
+	public String getEnd_time() {
 		return end_time;
 	}
 
-	public void setEnd_time(Date end_time) {
+	public void setEnd_time(String end_time) {
 		this.end_time = end_time;
 	}
 

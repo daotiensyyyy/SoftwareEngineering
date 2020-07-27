@@ -22,14 +22,14 @@
 
           <div class="col-lg-3 footer_col">
             <div class="footer_links">
-              <div class="footer_title">Quick menu</div>
-              <ul class="footer_list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Course Registration</a></li>
-                <li><a href="#">View Schedule</a></li>
-                <li><a href="#">View Point</a></li>
-                <li><a href="#">View Tuition</a></li>
-              </ul>
+              <div class="footer_title">Chức năng</div>
+            <ul class="footer_links">
+                    <li class="active"><a href="#">Trang chủ</a></li>
+                    <li><a href="Course">Đăng ký môn học</a></li>
+                    <li><a href="#">Xem lịch học</a></li>
+                    <li><a href="#">Xem điểm</a></li>
+                    <li><a href="#">Xem học phí</a></li>
+                  </ul>
             </div>
           </div>
 

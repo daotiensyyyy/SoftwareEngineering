@@ -24,12 +24,12 @@ public class Delete extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String course_id = request.getParameter("course_id");
 		List<Course> list = stm.getListCourse();
-			List<Course> list_cart = stm.getGioHang();
+			List<Course> list_cart = stm.getTmp();
 //			System.out.println(list);
 			request.setAttribute("lstCart", list_cart);
 //			System.out.println(list);
 		request.setAttribute("lstCourse", list);
-		stm.xoaSanPhamRaKkoiGioHang(course_id);
+		stm.delete(course_id);
 		request.getRequestDispatcher("/WEB-INF/views/courseRegister.jsp").forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

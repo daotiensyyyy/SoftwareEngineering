@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -13,7 +14,9 @@ import javax.servlet.http.HttpSession;
 import bean.Course;
 import bean.RegistrationForm;
 import bean.Student;
+import bean.UserAccount;
 import dao.ManageStudent;
+import utils.AppUtils;
 
 @WebServlet("/Save")
 public class Save extends HttpServlet {
@@ -31,18 +34,28 @@ public class Save extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		String course_id = request.getParameter("course_id");
-		String course_name = request.getParameter("course_name");
-		String credits = request.getParameter("credits");
-		String day = request.getParameter("day");
-		String room = request.getParameter("room");
-		String semester = request.getParameter("semester");
-		RegistrationForm rf = new RegistrationForm(course_id, student_code, semester, registration_date)
-		stm.register(rf);
-		// List<TourItem> list = new TourDAOImp().getList();
-		// request.setAttribute("list", list);
-		request.getRequestDispatcher("").forward(request, response);
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html");
+		try {
+			HttpSession session = request.getSession();
+			UserAccount user = AppUtils.getLoginedUser(session);
+			String student_code = String.valueOf(user);
+//			String student_code = (String) session.getAttribute("userAcount");
+			String course_id = request.getParameter("cart_course_id");
+			String course_name = request.getParameter("cart_course_name");
+			String day = request.getParameter("cart_day");
+			String room = request.getParameter("cart_room");
+			String semester = request.getParameter("cart_semester");
+			String start_time = request.getParameter("cart_start");
+			String end_time = request.getParameter("cart_end");
+			RegistrationForm rf = new RegistrationForm(student_code, course_id, course_name, day, room, semester,
+					start_time, end_time);
+			stm.register(rf);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		response.sendRedirect("Course");
 	}
 
 }

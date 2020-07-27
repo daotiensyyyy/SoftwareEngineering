@@ -128,7 +128,7 @@ input#course_name {
 									<img src="./Elearn_files/home_logo_1.png" alt="">
 								</div>
 								<div class="home_text">
-									<div class="home_title">Đăng ký môn học</div>
+									<div class="home_title"></div>
 								</div>
 							</div>
 						</div>
@@ -143,7 +143,7 @@ input#course_name {
 		<table class="table">
 			<thead class="thead-dark">
 				<h4>
-					<b>DANH SÁCH MÔN HỌC</b>
+					<b>DANH SÁCH MÔN HỌC ĐÃ ĐĂNG KÝ</b>
 				</h4>
 				<tr>
 					<th>Mã môn học</th>
@@ -161,28 +161,24 @@ input#course_name {
 			</thead>
 			<tbody>
 
-				<c:forEach items="${lstCourse }" var="course">
+				<c:forEach items="${lst }" var="res">
 					<tr>
 						<td><input id="course_id" type="text" class="input"
-							value="${course.course_id}" name="course_id" readonly /></td>
+							value="${res.course_id}" name="course_id" readonly /></td>
 						<td><input id="course_name" type="text" class="input"
-							value="${course.course_name}" name="course_name" readonly /></td>
+							value="${res.course_name}" name="course_name" readonly /></td>
 <!-- 						<td><input id="credits" type="text" class="input" -->
 <%-- 							value="${course.course_credits}" name="credits" readonly /></td> --%>
 						<td><input id="day" type="text" class="input"
-							value="${course.day}" name="day" readonly /></td>
+							value="${res.day}" name="day" readonly /></td>
 						<td><input id="room" type="text" class="input"
-							value="${course.room}" name="room" readonly /></td>
+							value="${res.room}" name="room" readonly /></td>
 						<td><input id="semester" type="text" class="input"
-							value="${course.semester}" name="course_id" readonly /></td>
+							value="${res.semester}" name="course_id" readonly /></td>
 												<td><input id="start" type="text" class="input"
-													value="${course.start_time}" name="start" readonly /></td>
+													value="${res.start_time}" name="start" readonly /></td>
 												<td><input id="end" type="text" class="input"
-													value="${course.end_time}" name="end" readonly /></td>
-						<td><a type="submit"
-							href="Course?course_id=${course.course_id }">
-								<i class="fas fa-square"></i>
-						</a></td>
+													value="${res.end_time}" name="end" readonly /></td>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -190,66 +186,7 @@ input#course_name {
 		<br> <br>
 
 	</div>
-	<form action="Save" method="post">
-		<div id="selected">
-			<table class="table">
-				<h4 class="selected-title">
-					<b>CÁC MÔN HỌC ĐÃ CHỌN</b>
-				</h4>
-				<button type="submit" class="btn btn-light">Lưu</button>
-				<a type="submit" href="View">Xem danh sách</a>
-				<thead class="thead-dark">
-					<tr>
-						<th>Mã môn học</th>
-						<th>Tên môn học</th>
-<!-- 						<th>Số tín chỉ</th> -->
-						<th>Thứ</th>
-						<th>Phòng học</th>
-						<th>Học kỳ</th>
-						<th>Bắt đầu</th>
-						<th>Kết thúc</th>
-						<!-- 					<th>Ngày bắt đầu</th> -->
-						<!-- 					<th>Ngày kết thúc</th> -->
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${lstCart }" var="cart">
-						<tr>
-							<td><input id="course_id" type="text" class="input"
-								value="${cart.course_id}" name="cart_course_id" readonly /></td>
-							<td><input id="course_name" type="text" class="input"
-								value="${cart.course_name}" name="cart_course_name" readonly /></td>
-<!-- 							<td><input id="credits" type="text" class="input" -->
-<%-- 								value="${cart.course_credits}" name="cart_credits" readonly /></td> --%>
-							<td><input id="day" type="text" class="input"
-								value="${cart.day}" name="cart_day" readonly /></td>
-							<td><input id="room" type="text" class="input"
-								value="${cart.room}" name="cart_room" readonly /></td>
-							<td><input id="semester" type="text" class="input"
-								value="${cart.semester}" name="cart_semester" readonly /></td>
-							<td><input id="start" type="text" class="input"
-								value="${cart.start_time}" name="cart_start" readonly /></td>
-							<td><input id="end" type="text" class="input"
-								value="${cart.end_time}" name="cart_end" readonly /></td>
-
-							<td><a href="Delete?course_id=${cart.course_id }">
-									<i class="far fa-window-close"></i>
-							</a></td>
-						</tr>
-					</c:forEach>
-
-				</tbody>
-			</table>
-			<br>
-			<br>
-		</div>
-	</form>
-
-
-
-
-
+	
 	<!-- Footer -->
 	<jsp:include page="/WEB-INF/footer/footer.jsp"></jsp:include>
 
