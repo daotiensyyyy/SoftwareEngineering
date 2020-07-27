@@ -189,6 +189,35 @@ public class ManageStudent {
 		ManageStudent.tmp = tmp;
 	}
 	
+	public ArrayList<Course> filterList(String course_id) {
+		List<Course> list = null;
+		Course c = null;
+		connection = DBConnect.getJDBCConnection();
+		try {
+			list = new ArrayList<Course>();
+			String sql = "select * from course where course_id='" + course_id + "'";
+			preparedStatement = connection.prepareStatement(sql);
+			resultSet = preparedStatement.executeQuery(sql);
+			while (resultSet.next()) {
+				c = new Course();
+				
+				c.setCourse_id(resultSet.getString(2));
+				c.setCourse_name(resultSet.getString(3));
+				c.setCourse_credits(resultSet.getString(4));
+				c.setDay(resultSet.getString(5));
+				c.setRoom(resultSet.getString(6));
+				c.setSemester(resultSet.getString(7));
+				c.setStart_time(resultSet.getString(8));
+				c.setEnd_time(resultSet.getString(9));
+				
+				list.add(c);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+		return (ArrayList<Course>) list;
+	}
 
 	
 	public static void main(String[] args) throws SQLException {
