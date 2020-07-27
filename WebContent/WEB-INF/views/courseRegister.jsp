@@ -157,7 +157,7 @@ input#course_name {
 				</tr>
 			</thead>
 			<tbody>
-			
+			<jsp:include page="/WEB-INF/views/search.jsp"></jsp:include>
 				<!-- lay danh sach mon hoc va hien thi len bang -->
 				<c:forEach items="${lstCourse }" var="course">
 					<tr>
