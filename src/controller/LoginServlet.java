@@ -41,7 +41,6 @@ public class LoginServlet extends HttpServlet {
 
 		if (userAccount.getUserName() == null) {
 			String errorMessage = "Tên đăng nhập hoặc mật khẩu không đúng";
-
 			request.setAttribute("errorMessage", errorMessage);
 
 			RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp");
