@@ -2,23 +2,15 @@ package bean;
 
 import java.util.Date;
 
-public abstract class User {
-	protected String code;
-	protected String firstname;
-	protected String lastname;
-	protected String address;
-	protected String email;
-	protected Date birthday;
-	protected String phone;
-	protected String username;
-	protected String password;
-	protected String role;
-	protected String status;
-	
+public class User {
+	String id, firstname, lastname, address, email, phone, role, status;
+	String username;
+	String password;
+	Date birthday;
+
 	public User(String code, String firstname, String lastname, String address, String email, Date birthday,
 			String phone, String username, String password, String role, String status) {
-		super();
-		this.code = code;
+		this.id = code;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.address = address;
@@ -30,17 +22,16 @@ public abstract class User {
 		this.role = role;
 		this.status = status;
 	}
-	
+
 	public User() {
-		
 	}
 
-	public String getCode() {
-		return code;
+	public String getId() {
+		return id;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getFirstname() {
@@ -75,20 +66,28 @@ public abstract class User {
 		this.email = email;
 	}
 
-	public Date getBirthday() {
-		return birthday;
-	}
-
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
-
 	public String getPhone() {
 		return phone;
 	}
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getUsername() {
@@ -107,27 +106,12 @@ public abstract class User {
 		this.password = password;
 	}
 
-	public String getRole() {
-		return role;
+	public Date getBirthday() {
+		return birthday;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 
-	public String isStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	@Override
-	public String toString() {
-		return "User [code=" + code + ", lastname=" + lastname + ", firstname=" + firstname + ", address=" + address
-				+ ", email=" + email + ", birthday=" + birthday + ", phone=" + phone + ", username=" + username
-				+ ", password=" + password + ", role=" + role + ", status=" + status + "]";
-	}
-	
 }

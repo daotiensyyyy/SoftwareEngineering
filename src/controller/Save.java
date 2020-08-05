@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 import bean.Course;
 import bean.RegistrationForm;
 import bean.Student;
-import bean.UserAccount;
+import bean.User;
 import dao.ManageStudent;
 import utils.AppUtils;
 
@@ -38,7 +38,7 @@ public class Save extends HttpServlet {
 		response.setContentType("text/html");
 		try {
 			HttpSession session = request.getSession();
-			UserAccount user = AppUtils.getLoginedUser(session);
+			User user = AppUtils.getLoginedUser(session);
 			String student_code = String.valueOf(user);
 //			String student_code = (String) session.getAttribute("userAcount");
 			String course_id = request.getParameter("cart_course_id");
@@ -54,7 +54,7 @@ public class Save extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		response.sendRedirect("Course");
 	}
 

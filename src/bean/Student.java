@@ -34,13 +34,13 @@ public class Student extends User {
 		this.student_class = student_class;
 	}
 
-	@Override
-	public String toString() {
-		return "Student [code=" + code + ", lastname=" + lastname + ", firstname=" + firstname + ", address=" + address
-				+ ", email=" + email + ", birthday=" + birthday + ", phone=" + phone + ", student_falcuty=" + student_faculty + ", student_class=" +
-				student_class + ", username=" + username	+ ", password=" + password + ", role=" + role + ", status=" + status + "]";
-
-	}
+//	@Override
+//	public String toString() {
+//		return "Student [code=" + code + ", lastname=" + lastname + ", firstname=" + firstname + ", address=" + address
+//				+ ", email=" + email + ", birthday=" + birthday + ", phone=" + phone + ", student_falcuty=" + student_faculty + ", student_class=" +
+//				student_class + ", username=" + username	+ ", password=" + password + ", role=" + role + ", status=" + status + "]";
+//
+//	}
 	
 	
 }

@@ -14,7 +14,6 @@ import javax.servlet.http.HttpSession;
 
 import bean.Course;
 import bean.User;
-import bean.UserAccount;
 import dao.ManageStudent;
 import utils.AppUtils;
 import utils.UserDAO;
@@ -32,7 +31,7 @@ public class CourseRegistration extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-			doPost(request, response);
+		doPost(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -40,8 +39,8 @@ public class CourseRegistration extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html");
 		HttpSession session = request.getSession(false);
-		UserAccount user = AppUtils.getLoginedUser(session);
-		//kiem tra da dang nhap chua
+		User user = AppUtils.getLoginedUser(session);
+		// kiem tra da dang nhap chua
 		if (user != null) {
 			System.out.println(user);
 			List<Course> list = stm.getListCourse();
@@ -53,7 +52,7 @@ public class CourseRegistration extends HttpServlet {
 			request.setAttribute("lstCourse", list);
 			request.getRequestDispatcher("/WEB-INF/views/courseRegister.jsp").forward(request, response);
 		} else {
-			//chua dang nhap quay lai trang dang nhap
+			// chua dang nhap quay lai trang dang nhap
 			response.sendRedirect("login");
 		}
 

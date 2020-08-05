@@ -6,7 +6,7 @@
 <html lang="en">
 
 <!-- head -->
-<jsp:include page="WEB-INF/head/head.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/head/head.jsp"></jsp:include>
 <!---->
 <body>
 	<div class="parallax-mirror"

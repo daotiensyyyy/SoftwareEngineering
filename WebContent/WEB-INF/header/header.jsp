@@ -59,10 +59,10 @@
 
 							</c:if>
 							<c:if test="${not empty loginedUser}">
-								<span style="color: gree; margin-right: 20px">
-									${loginedUser.userName} </span>
-								<a style="text-decoration: none; color: black;" href="${pageContext.request.contextPath}/logout"> Đăng
-									xuất </a> &nbsp;</a>
+								<span style="color: gree; margin-right: 20px">${loginedUser.username}</span>
+								<a style="text-decoration: none; color: black;"
+									href="${pageContext.request.contextPath}/logout"> Đăng xuất
+								</a> &nbsp;</a>
 							</c:if>
 							<!-- Hamburger -->
 

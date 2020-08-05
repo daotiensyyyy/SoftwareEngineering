@@ -496,11 +496,6 @@ span.icon2 {
 			</div>
 		</div>
 		<!--//main-->
-		<!--footer-->
-		<div class="footer">
-			<p></p>
-		</div>
-		<!--//footer-->
 	</div>
 </body>
 </html>
