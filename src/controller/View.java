@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.Course;
-import bean.RegistrationForm;
-import bean.User;
 import dao.ManageStudent;
+import model.Course;
+import model.RegistrationForm;
+import model.User;
 import utils.AppUtils;
 import utils.UserDAO;
 
@@ -38,10 +38,9 @@ public class View extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		User user = AppUtils.getLoginedUser(session);
-
 		String student_code = String.valueOf(user);
 		List<RegistrationForm> list = stm.getByStudent_code(student_code);
-
+	
 		request.setAttribute("lst", list);
 		request.getRequestDispatcher("/WEB-INF/views/selected.jsp").forward(request, response);
 

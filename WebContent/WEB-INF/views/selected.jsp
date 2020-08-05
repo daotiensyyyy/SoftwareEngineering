@@ -33,8 +33,9 @@
 </head>
 <style>
 input#course_id, input#credits, input#day, input#room, input#start,
-	input#end, input#semester {
+	input#end, input#semester, input#time {
 	border: none;
+	width: 100px;
 }
 
 input#course_name {
@@ -48,69 +49,17 @@ input#course_name {
 
 #subject_list {
 	width: 100% !important;
+	padding: 1em 4em;
 }
-.table td, .table th{
+
+.table td, .table th {
 	padding: 0 !important;
 	padding-top: 10px;
-	
 }
 </style>
 <body>
 	<!-- Header -->
-	<header class="header">
-		<!-- Header Content -->
-		<div class="header_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div
-							class="header_content d-flex flex-row align-items-center justify-content-start">
-							<div class="logo_container">
-								<a href="#">
-									<div
-										class="logo_content d-flex flex-row align-items-end justify-content-start">
-										<div class="logo_img">
-											<img src="./Elearn_files/logo_1.png" alt="">
-										</div>
-									</div>
-								</a>
-							</div>
-							<nav class="main_nav_contaner ml-auto">
-							<ul class="main_nav">
-								<li><a href="index.jsp" style="text-decoration: none;"/home">Trang
-										chủ</a></li>
-								<li class="active"><a style="text-decoration: none;" href="Course">Đăng
-										ký môn học</a></li>
-								<li><a style="text-decoration: none;"#">Xem lịch học</a></li>
-								<li><a style="text-decoration: none;"#">Xem điểm</a></li>
-								<li><a style="text-decoration: none;"#">Xem học phí</a></li>
-							</ul>
-
-							<c:if test="${empty loginedUser}">
-								<a href="/STM/login"> <atext.request.contextPath}/login">
-									<span class="glyphicon glyphicon-user" style="color: black;"></span></a>
-
-							</c:if>
-							<c:if test="${not empty loginedUser}">
-								<span style="color: gree; margin-right: 20px">
-									${loginedUser.userName} </span>
-								<a style="text-decoration: none; color: black;" href="${pageContext.request.contextPath}/logout"> Đăng
-									xuất </a> &nbsp;</a>
-							</c:if>
-							<!-- Hamburger -->
-
-							<div class="hamburger menu_mm">
-								<i class="fa fa-bars menu_mm" aria-hidden="true"></i>
-							</div>
-						</nav>
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</header>
+	<jsp:include page="/WEB-INF/header/header.jsp"></jsp:include>
 
 	<!-- Menu -->
 	<div class="milestones">
@@ -150,6 +99,7 @@ input#course_name {
 					<th>Tên môn học</th>
 					<th>Thứ</th>
 					<th>Phòng học</th>
+					<th>Tiết bắt đầu</th>
 					<th>Học kỳ</th>
 					<th>Bắt đầu</th>
 					<th>Kết thúc</th>
@@ -170,12 +120,14 @@ input#course_name {
 							value="${res.day}" name="day" readonly /></td>
 						<td><input id="room" type="text" class="input"
 							value="${res.room}" name="room" readonly /></td>
+						<td><input id="time" type="text" class="input"
+							value="${res.time}" name="time" readonly /></td>
 						<td><input id="semester" type="text" class="input"
-							value="${res.semester}" name="course_id" readonly /></td>
-												<td><input id="start" type="text" class="input"
-													value="${res.start_time}" name="start" readonly /></td>
-												<td><input id="end" type="text" class="input"
-													value="${res.end_time}" name="end" readonly /></td>
+							value="${res.semester}" name="semester" readonly /></td>
+						<td><input id="start" type="text" class="input"
+							value="${res.start_time}" name="start" readonly /></td>
+						<td><input id="end" type="text" class="input"
+							value="${res.end_time}" name="end" readonly /></td>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -183,7 +135,7 @@ input#course_name {
 		<br> <br>
 
 	</div>
-	
+
 	<!-- Footer -->
 	<jsp:include page="/WEB-INF/footer/footer.jsp"></jsp:include>
 

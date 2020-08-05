@@ -5,7 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-import bean.User;
+import model.User;
 
 public class AppUtils {
 	private static int REDIRECT_ID = 0;

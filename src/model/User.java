@@ -1,4 +1,4 @@
-package bean;
+package model;
 
 import java.util.Date;
 
@@ -114,4 +114,9 @@ public class User {
 		this.birthday = birthday;
 	}
 
+	@Override
+	public String toString() {
+		return  username;
+	}
+	
 }

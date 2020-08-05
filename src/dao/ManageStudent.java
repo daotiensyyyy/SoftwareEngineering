@@ -12,11 +12,11 @@ import java.util.Map;
 
 import com.mysql.jdbc.Statement;
 
-import bean.Course;
-import bean.RegistrationForm;
-import bean.Student;
-import bean.Teacher;
 import connection.DBConnect;
+import model.Course;
+import model.RegistrationForm;
+import model.Student;
+import model.Teacher;
 
 public class ManageStudent {
 	Connection connection = null;
@@ -34,7 +34,7 @@ public class ManageStudent {
 	// lay ds mon hoc
 	public List<Course> getListCourse() {
 		Course c = null;
-		String sql = "select * from student_management.course ";
+		String sql = "select * from qlsv.course ";
 		connection = DBConnect.getJDBCConnection();
 		try {
 			listCourse = new ArrayList<Course>();
@@ -47,9 +47,10 @@ public class ManageStudent {
 				c.setCourse_credits(resultSet.getString(4));
 				c.setDay(resultSet.getString(5));
 				c.setRoom(resultSet.getString(6));
-				c.setSemester(resultSet.getString(7));
-				c.setStart_time(resultSet.getString(8));
-				c.setEnd_time(resultSet.getString(9));
+				c.setTime(resultSet.getString(7));
+				c.setSemester(resultSet.getString(8));
+				c.setStart_time(resultSet.getString(9));
+				c.setEnd_time(resultSet.getString(10));
 
 				listCourse.add(c);
 			}
@@ -83,7 +84,7 @@ public class ManageStudent {
 	public RegistrationForm register(RegistrationForm rf) throws SQLException {
 		connection = DBConnect.getJDBCConnection();
 		preparedStatement = null;
-		String sql = "insert into registration values(?,?,?,?,?,?,?,?)";
+		String sql = "insert into registration values(?,?,?,?,?,?,?,?,?)";
 		try {
 			preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, rf.getStudent_code());
@@ -91,9 +92,10 @@ public class ManageStudent {
 			preparedStatement.setString(3, rf.getCourse_name());
 			preparedStatement.setString(4, rf.getDay());
 			preparedStatement.setString(5, rf.getRoom());
-			preparedStatement.setString(6, rf.getSemester());
-			preparedStatement.setString(7, rf.getStart_time());
-			preparedStatement.setString(8, rf.getEnd_time());
+			preparedStatement.setString(6, rf.getTime());
+			preparedStatement.setString(7, rf.getSemester());
+			preparedStatement.setString(8, rf.getStart_time());
+			preparedStatement.setString(9, rf.getEnd_time());
 			int row = preparedStatement.executeUpdate();
 			if (row < 1) {
 				rf = null;
@@ -116,7 +118,7 @@ public class ManageStudent {
 		RegistrationForm rf = null;
 		try {
 			list = new ArrayList<RegistrationForm>();
-			String sql = "select distinct * from student_management.registration where student_code='" + student_code + "'";
+			String sql = "select distinct * from qlsv.registration where student_code='" + student_code + "'";
 			preparedStatement = connection.prepareStatement(sql);
 			resultSet = preparedStatement.executeQuery(sql);
 			while (resultSet.next()) {
@@ -127,9 +129,10 @@ public class ManageStudent {
 				rf.setCourse_name(resultSet.getString(3));
 				rf.setDay(resultSet.getString(4));
 				rf.setRoom(resultSet.getString(5));
-				rf.setSemester(resultSet.getString(6));
-				rf.setStart_time(resultSet.getString(7));
-				rf.setEnd_time(resultSet.getString(8));
+				rf.setTime(resultSet.getString(6));
+				rf.setSemester(resultSet.getString(7));
+				rf.setStart_time(resultSet.getString(8));
+				rf.setEnd_time(resultSet.getString(9));
 				
 				list.add(rf);
 			}
@@ -206,9 +209,10 @@ public class ManageStudent {
 				c.setCourse_credits(resultSet.getString(4));
 				c.setDay(resultSet.getString(5));
 				c.setRoom(resultSet.getString(6));
-				c.setSemester(resultSet.getString(7));
-				c.setStart_time(resultSet.getString(8));
-				c.setEnd_time(resultSet.getString(9));
+				c.setTime(resultSet.getString(7));
+				c.setSemester(resultSet.getString(8));
+				c.setStart_time(resultSet.getString(9));
+				c.setEnd_time(resultSet.getString(10));
 				
 				list.add(c);
 			}
@@ -218,20 +222,39 @@ public class ManageStudent {
 		}
 		return (ArrayList<Course>) list;
 	}
+	
+	public boolean checkExist(String student_code, String course_id, String day, String time) {
+		try {
+			ResultSet  rs=new DBConnect().selectFromDatabase("select * from registration where student_code='"+student_code+"' "
+					+ "and course_id='"+course_id+"' and day='"+day+"'and time='"+time+"'");
+			 while(rs.next()){
+				 if(rs.getString(1).equals(student_code) && rs.getString(2).equals(course_id)
+						 && rs.getString(4).equals(day)&& rs.getString(6).equals(time)){
+					 return true;
+				 }
+			 }
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+		return false;
+	}
 
 	
 	public static void main(String[] args) throws SQLException {
 		ManageStudent ms = new ManageStudent();
-//		RegistrationForm rf = new RegistrationForm("2", "214282", "1", "1", "2", "2", "22","22");
+//		RegistrationForm rf = new RegistrationForm("2", "2","214282", "1", "1", "2", "2", "22","22");
 //		System.out.println(ms.getListStudent());
 //		System.out.println(ms.getListCourse());
 //		System.out.println(ms.getAllRegistration());
-//		System.out.println(ms.checkLogin("17130197", "123"));
+//		System.out.println(ms.checkLogin("17130197", "123456"));
 //		ms.register(rf);
 //		System.out.println(ms.getByStudent_code("17130094"));
 //		ms.insert("214252");
 //		System.out.println(ms.tmp);
 //		System.out.println(ms.checkExist("214252"));
 //		System.out.println(ms.mapStudent.get("17130198"));
+//		System.out.println(ms.filterList("214370"));
+//		System.out.println(ms.checkExist("17130197", "214451", "5", "7"));
 	}
 }

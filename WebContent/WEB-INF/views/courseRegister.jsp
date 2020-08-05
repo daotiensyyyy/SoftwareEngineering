@@ -30,11 +30,26 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<!-- JS tạo nút bấm di chuyển trang start -->
+<script
+	src="http://1892.yn.lt/blogger/JQuery/Pagging/js/jquery.twbsPagination.js"
+	type="text/javascript"></script>
+<!-- JS tạo nút bấm di chuyển trang end -->
+	<script>
+// 	$(document).ready(function() {
+// 		$('#btn-sub').click(function(){
+// 			alert("Xác nhận chọn");
+// 		});	
+				
+// 	});
+	</script>
 </head>
 <style>
 input#course_id, input#credits, input#day, input#room, input#start,
-	input#end, input#semester {
+	input#end, input#semester, input#time {
 	border: none;
+	width:100px;
 }
 
 input#course_name {
@@ -48,69 +63,24 @@ input#course_name {
 
 #subject_list {
 	width: 100% !important;
+	padding: 1em 4em;
 }
 .table td, .table th{
 	padding: 0 !important;
 	padding-top: 10px;
 	
 }
+ul#pagination {
+	display: flex;
+	flex-wrap: wrap;
+	
+	justify-content: center;
+	-webkit-justify-content: flex-end;
+}
 </style>
 <body>
 	<!-- Header -->
-	<header class="header">
-		<!-- Header Content -->
-		<div class="header_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div
-							class="header_content d-flex flex-row align-items-center justify-content-start">
-							<div class="logo_container">
-								<a href="#">
-									<div
-										class="logo_content d-flex flex-row align-items-end justify-content-start">
-										<div class="logo_img">
-											<img src="./Elearn_files/logo_1.png" alt="">
-										</div>
-									</div>
-								</a>
-							</div>
-							<nav class="main_nav_contaner ml-auto">
-							<ul class="main_nav">
-								<li><a href="index.jsp" style="text-decoration: none;"/home">Trang
-										chủ</a></li>
-								<li class="active"><a style="text-decoration: none;" href="Course">Đăng
-										ký môn học</a></li>
-								<li><a style="text-decoration: none;"#">Xem lịch học</a></li>
-								<li><a style="text-decoration: none;"#">Xem điểm</a></li>
-								<li><a style="text-decoration: none;"#">Xem học phí</a></li>
-							</ul>
-
-							<c:if test="${empty loginedUser}">
-								<a href="/STM/login"> <atext.request.contextPath}/login">
-									<span class="glyphicon glyphicon-user" style="color: black;"></span></a>
-
-							</c:if>
-							<c:if test="${not empty loginedUser}">
-								<span style="color: gree; margin-right: 20px">
-									${loginedUser.userName} </span>
-								<a style="text-decoration: none; color: black;" href="${pageContext.request.contextPath}/logout"> Đăng
-									xuất </a> &nbsp;</a>
-							</c:if>
-							<!-- Hamburger -->
-
-							<div class="hamburger menu_mm">
-								<i class="fa fa-bars menu_mm" aria-hidden="true"></i>
-							</div>
-						</nav>
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</header>
+	<jsp:include page="/WEB-INF/header/header.jsp"></jsp:include>
 
 	<!-- Menu -->
 	<div class="milestones">
@@ -140,6 +110,7 @@ input#course_name {
 	<br>
 	<br>
 	<div id="subject_list">
+		<h3>${message }</h3>
 		<table class="table">
 			<thead class="thead-dark">
 				<h4>
@@ -150,6 +121,7 @@ input#course_name {
 					<th>Tên môn học</th>
 					<th>Thứ</th>
 					<th>Phòng học</th>
+					<th>Tiết bắt đầu</th>
 					<th>Học kỳ</th>
 					<th>Bắt đầu</th>
 					<th>Kết thúc</th>
@@ -160,89 +132,38 @@ input#course_name {
 			<jsp:include page="/WEB-INF/views/search.jsp"></jsp:include>
 				<!-- lay danh sach mon hoc va hien thi len bang -->
 				<c:forEach items="${lstCourse }" var="course">
-					<tr>
+					<tr class="contentPage" ">
 						<td><input id="course_id" type="text" class="input"
 							value="${course.course_id}" name="course_id" readonly /></td>
 						<td><input id="course_name" type="text" class="input"
 							value="${course.course_name}" name="course_name" readonly /></td>
-<!-- 						<td><input id="credits" type="text" class="input" -->
-<%-- 							value="${course.course_credits}" name="credits" readonly /></td> --%>
 						<td><input id="day" type="text" class="input"
 							value="${course.day}" name="day" readonly /></td>
 						<td><input id="room" type="text" class="input"
 							value="${course.room}" name="room" readonly /></td>
+						<td><input id="time" type="text" class="input"
+							value="${course.time}" name="time" readonly /></td>
 						<td><input id="semester" type="text" class="input"
-							value="${course.semester}" name="course_id" readonly /></td>
-												<td><input id="start" type="text" class="input"
-													value="${course.start_time}" name="start" readonly /></td>
-												<td><input id="end" type="text" class="input"
-													value="${course.end_time}" name="end" readonly /></td>
+							value="${course.semester}" name="semester" readonly /></td>
+						<td><input id="start" type="text" class="input"
+							value="${course.start_time}" name="start" readonly /></td>
+						<td><input id="end" type="text" class="input"
+							value="${course.end_time}" name="end" readonly /></td>
 						<td><a type="submit"
-							href="Course?course_id=${course.course_id }">
-								<i class="fas fa-square"></i>
+							href="Save?course_id=${course.course_id }&course_name=${course.course_name }
+							&day=${course.day }&room=${course.room }&time=${course.time }&semester=${course.semester }
+							&start=${course.start_time }&end=${course.end_time }">
+								<i class="fas fa-square" id="btn-sub"></i>
 						</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+		<div><a type="submit" href="View">Xem danh sách đã đăng kí</a></div>
+		<ul id="pagination"></ul>
 		<br> <br>
 
 	</div>
-	<form action="Save" method="post">
-		<div id="selected">
-			<table class="table">
-				<h4 class="selected-title">
-					<b>CÁC MÔN HỌC ĐÃ CHỌN</b>
-				</h4>
-				<button type="submit" class="btn btn-light">Lưu</button>
-				<a type="submit" href="View">Xem danh sách</a>
-				<thead class="thead-dark">
-					<tr>
-						<th>Mã môn học</th>
-						<th>Tên môn học</th>
-						<!-- <th>Số tín chỉ</th> -->
-						<th>Thứ</th>
-						<th>Phòng học</th>
-						<th>Học kỳ</th>
-						<th>Bắt đầu</th>
-						<th>Kết thúc</th>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
-				
-					<!-- danh sach mon hoc da chon -->
-					<c:forEach items="${lstCart }" var="cart">
-						<tr>
-							<td><input id="course_id" type="text" class="input"
-								value="${cart.course_id}" name="cart_course_id" readonly /></td>
-							<td><input id="course_name" type="text" class="input"
-								value="${cart.course_name}" name="cart_course_name" readonly /></td>
-<!-- 							<td><input id="credits" type="text" class="input" -->
-<%-- 								value="${cart.course_credits}" name="cart_credits" readonly /></td> --%>
-							<td><input id="day" type="text" class="input"
-								value="${cart.day}" name="cart_day" readonly /></td>
-							<td><input id="room" type="text" class="input"
-								value="${cart.room}" name="cart_room" readonly /></td>
-							<td><input id="semester" type="text" class="input"
-								value="${cart.semester}" name="cart_semester" readonly /></td>
-							<td><input id="start" type="text" class="input"
-								value="${cart.start_time}" name="cart_start" readonly /></td>
-							<td><input id="end" type="text" class="input"
-								value="${cart.end_time}" name="cart_end" readonly /></td>
-
-							<td><a href="Delete?course_id=${cart.course_id }">
-									<i class="far fa-window-close"></i>
-							</a></td>
-						</tr>
-					</c:forEach>
-
-				</tbody>
-			</table>
-			<br>
-			<br>
-		</div>
-	</form>
 
 
 

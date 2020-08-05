@@ -4,8 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import bean.User;
 import connection.DBConnect;
+import model.User;
 
 public class UserDAO {
 	public User checkLogin(String user, String pass) {
@@ -39,8 +39,8 @@ public class UserDAO {
 
 	}
 
-//	public static void main(String[] args) {
-//		UserDAO ud = new UserDAO();
-//		System.out.println(ud.checkLogin("17130084", "123456").getUsername());
-//	}
+	public static void main(String[] args) {
+		UserDAO ud = new UserDAO();
+		System.out.println(ud.checkLogin("17130197", "123").getUsername());
+	}
 }
