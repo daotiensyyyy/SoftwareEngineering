@@ -2,40 +2,32 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-
 <!DOCTYPE html>
-<!-- saved from url=(0038)https://themes.wplook.com/morning-time -->
+<!-- saved from url=(0044)https://technext.github.io/elearn/index.html -->
 <html lang="en">
 
+<!-- head -->
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Elearn</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Elearn</title>
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Elearn project">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Elearn project">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-	crossorigin="anonymous">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
-<link rel="stylesheet" type="text/css"
-	href="./Elearn_files/registration.css">
-<link rel="stylesheet" type="text/css"
-	href="./Elearn_files/responsive.css">
-
-<script
+  <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
-</head>
+  <link rel="stylesheet" type="text/css" href="./Elearn_files/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+  <link rel="stylesheet" type="text/css" href="./Elearn_files/main_styles.css">
+  <link rel="stylesheet" type="text/css" href="./Elearn_files/responsive.css">
+
 <style>
 input#course_id, input#credits, input#day, input#room, input#start,
-	input#end, input#semester input#time {
+	input#end, input#semester, input#time {
 	border: none;
-	width: 100px;
+	width:100px;
 }
 
 input#course_name {
@@ -56,28 +48,70 @@ input#course_name {
 	padding: 0 !important;
 	padding-top: 10px;
 }
-</style>
+ul#pagination {
+	display: flex;
+	flex-wrap: wrap;
+	
+	justify-content: center;
+	-webkit-justify-content: flex-end;
+}
+</style>	
+	
+</head>
+<!---->
 <body>
-	<!-- Header -->
-	<jsp:include page="/WEB-INF/header/header.jsp"></jsp:include>
+	<div class="parallax-mirror"
+		style="visibility: hidden; z-index: -100; position: fixed; top: 0px; left: 0px; overflow: hidden; height: 504.8px; width: 1457.6px; transform: translate3d(0px, 766.338px, 0px);">
+		<img class="parallax-slider" src="./Elearn_files/milestones.jpg"
+			style="position: absolute; height: 637px; width: 1457.6px; max-width: none; transform: translate3d(0px, -190.268px, 0px);">
+	</div>
 
-	<!-- Menu -->
-	<div class="milestones">
-		<!-- Background image artis https://unsplash.com/@thepootphotographer -->
-		<div class="parallax_background parallax-window"
-			data-parallax="scroll" data-image-src="Elearn_files\bg.jpg"
-			data-speed="0.8"></div>
-		<div class="container">
-			<div class="row milestones_container">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="home_content text-center">
-								<div class="home_logo">
-									<img src="./Elearn_files/home_logo_1.png" alt="">
-								</div>
-								<div class="home_text">
-									<div class="home_title">Đăng ký môn học</div>
+	<div class="super_container">
+		<!-- Header -->
+		<jsp:include page="/WEB-INF/header/header.jsp"></jsp:include>
+
+		<!-- Menu -->
+
+		<div
+			class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+			<div class="menu_close_container">
+				<div class="menu_close">
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<nav class="menu_nav">
+				<ul class="menu_mm">
+					<li class="menu_mm"><a href="index.jsp">Trang chủ</a></li>
+					<li class="menu_mm"><a href="Course">Đăng ký môn học</a></li>
+					<li class="menu_mm"><a href="#">Xem lịch học</a></li>
+					<li class="menu_mm"><a href="#">Xem điểm</a></li>
+					<li class="menu_mm"><a href="#">Xem học phí</a></li>
+				</ul>
+			</nav>
+		
+		</div>
+
+		<!-- Milestones -->
+
+		<div class="milestones">
+			<!-- Background image artis https://unsplash.com/@thepootphotographer -->
+			<div class="parallax_background parallax-window"
+				data-parallax="scroll" data-image-src="./Elearn_files/bg.jpg"
+				data-speed="0.8"></div>
+			<div class="container">
+				<div class="row milestones_container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="home_content text-center">
+									<div class="home_logo">
+										<img src="./Elearn_files/home_logo_1.png" alt="">
+									</div>
+									<div class="home_text">
+										<div class="home_title">Đăng ký môn học</div>
+										
+									</div>
 								</div>
 							</div>
 						</div>
@@ -85,10 +119,9 @@ input#course_name {
 				</div>
 			</div>
 		</div>
-	</div>
-	<br>
-	<br>
-	<div id="subject_list">
+
+<div id="subject_list">
+	<div class="table-responsive-lg">
 		<table class="table">
 			<thead class="thead-dark">
 				<h4>
@@ -124,7 +157,7 @@ input#course_name {
 						<td><input id="time" type="text" class="input"
 							value="${course.time}" name="time" readonly /></td>
 						<td><input id="semester" type="text" class="input"
-							value="${course.semester}" name="course_id" readonly /></td>
+							value="${course.semester}" name="semester" readonly /></td>
 						<td><input id="start" type="text" class="input"
 							value="${course.start_time}" name="start" readonly /></td>
 						<td><input id="end" type="text" class="input"
@@ -139,16 +172,30 @@ input#course_name {
 				</c:forEach>
 			</tbody>
 		</table>
+		<br>
+		<div><a href="Course">Quay lại</a></div>
+		</div>
 		<br> <br>
 
 	</div>
 
+<<<<<<< HEAD
 	<!-- Footer -->
 	<jsp:include page="/WEB-INF/footer/footer.jsp"></jsp:include>
+=======
+
+		<!-- Footer -->
+		<jsp:include page="/WEB-INF/footer/footer.jsp"></jsp:include>
+>>>>>>> ea819476e8b43254130f88bbd17aa7c6e6268eba
 
 	</div>
 
+	<script src="./Elearn_files/jquery-3.2.1.min.js.download"></script>
+	<script src="./Elearn_files/popper.js.download"></script>
+	<script src="./Elearn_files/bootstrap.min.js.download"></script>
 
+	<script src="./Elearn_files/ScrollMagic.min.js.download"></script>
+	<script src="./Elearn_files/animation.gsap.min.js.download"></script>
 
 	<script src="./Elearn_files/ScrollToPlugin.min.js.download"></script>
 	<script src="./Elearn_files/parallax.min.js.download"></script>
@@ -165,7 +212,8 @@ input#course_name {
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
 		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 		crossorigin="anonymous"></script>
+
 </body>
 
-
 </html>
+
