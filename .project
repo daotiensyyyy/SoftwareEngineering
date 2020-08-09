@@ -28,4 +28,11 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>WebContent/Elearn_files/OIP.jpg</name>
+			<type>1</type>
+			<location>C:/Users/User/Downloads/OIP.jpg</location>
+		</link>
+	</linkedResources>
 </projectDescription>
