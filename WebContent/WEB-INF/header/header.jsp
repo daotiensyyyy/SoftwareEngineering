@@ -33,7 +33,7 @@
 					<div
 						class="header_content d-flex flex-row align-items-center justify-content-start">
 						<div class="logo_container">
-							<a href="#">
+							<a href="http://localhost:8080/">
 								<div
 									class="logo_content d-flex flex-row align-items-end justify-content-start">
 									<div class="logo_img">
@@ -44,7 +44,7 @@
 						</div>
 						<nav class="main_nav_contaner ml-auto">
 							<ul class="main_nav">
-								<li class=""><a style="text-decoration: none;"/home">Trang
+								<li class=""><a style="text-decoration: none;href="http://localhost:8080/">Trang
 										chủ</a></li>
 								<li><a style="text-decoration: none;" href="Course">Đăng
 										ký môn học</a></li>
@@ -54,8 +54,9 @@
 							</ul>
 
 							<c:if test="${empty loginedUser}">
-								<a href="/STM/login"> <atext.request.contextPath}/login">
-									<span class="glyphicon glyphicon-user" style="color: black;"></span></a>
+								<a href="<c:url value="/login"/>"> <span
+									class="glyphicon glyphicon-user" style="color: black;"></span>
+								</a>
 
 							</c:if>
 							<c:if test="${not empty loginedUser}">

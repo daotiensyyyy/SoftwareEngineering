@@ -34,7 +34,7 @@ public class ManageStudent {
 	// lay ds mon hoc
 	public List<Course> getListCourse() {
 		Course c = null;
-		String sql = "select * from qlsv.course ";
+		String sql = "select * from course ";
 		connection = DBConnect.getJDBCConnection();
 		try {
 			listCourse = new ArrayList<Course>();
@@ -118,7 +118,7 @@ public class ManageStudent {
 		RegistrationForm rf = null;
 		try {
 			list = new ArrayList<RegistrationForm>();
-			String sql = "select distinct * from qlsv.registration where student_code='" + student_code + "'";
+			String sql = "select distinct * from registration where student_code='" + student_code + "'";
 			preparedStatement = connection.prepareStatement(sql);
 			resultSet = preparedStatement.executeQuery(sql);
 			while (resultSet.next()) {

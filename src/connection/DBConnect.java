@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import constants.Constants;
 
-public class DBConnect extends Constants{
+public class DBConnect extends Constants {
 	private static Connection con;
 	private static String url = URL;
 	private static String user = USER;
@@ -28,7 +28,6 @@ public class DBConnect extends Constants{
 		return null;
 
 	}
-
 
 	public static PreparedStatement getPreparedStatement(String sql) throws ClassNotFoundException, SQLException {
 		if (con == null || con.isClosed()) {

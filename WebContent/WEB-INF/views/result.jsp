@@ -51,10 +51,10 @@ input#course_name {
 	width: 100% !important;
 	padding: 1em 4em;
 }
-.table td, .table th{
+
+.table td, .table th {
 	padding: 0 !important;
 	padding-top: 10px;
-	
 }
 </style>
 <body>
@@ -107,7 +107,7 @@ input#course_name {
 				</tr>
 			</thead>
 			<tbody>
-			
+
 				<!-- lay danh sach mon hoc va hien thi len bang -->
 				<c:forEach items="${list }" var="course">
 					<tr>
@@ -115,14 +115,14 @@ input#course_name {
 							value="${course.course_id}" name="course_id" readonly /></td>
 						<td><input id="course_name" type="text" class="input"
 							value="${course.course_name}" name="course_name" readonly /></td>
-<!-- 						<td><input id="credits" type="text" class="input" -->
-<%-- 							value="${course.course_credits}" name="credits" readonly /></td> --%>
+						<!-- 						<td><input id="credits" type="text" class="input" -->
+						<%-- 							value="${course.course_credits}" name="credits" readonly /></td> --%>
 						<td><input id="day" type="text" class="input"
 							value="${course.day}" name="day" readonly /></td>
 						<td><input id="room" type="text" class="input"
 							value="${course.room}" name="room" readonly /></td>
 						<td><input id="time" type="text" class="input"
-							value="${course.time}" name="time" readonly /></td>	
+							value="${course.time}" name="time" readonly /></td>
 						<td><input id="semester" type="text" class="input"
 							value="${course.semester}" name="course_id" readonly /></td>
 						<td><input id="start" type="text" class="input"
@@ -142,7 +142,7 @@ input#course_name {
 		<br> <br>
 
 	</div>
-	
+
 	<!-- Footer -->
 	<jsp:include page="/WEB-INF/footer/footer.jsp"></jsp:include>
 

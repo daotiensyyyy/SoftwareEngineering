@@ -59,7 +59,7 @@ public class LoginServlet extends HttpServlet {
 				// Mặc định sau khi đăng nhập thành công
 				// chuyển hướng về trang /home
 //				request.getRequestDispatcher("/index.jsp").forward(request, response);
-				response.sendRedirect("/STM/");
+				response.sendRedirect("/");
 			}
 		}
 
