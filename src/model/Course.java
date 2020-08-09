@@ -1,4 +1,4 @@
-package bean;
+package model;
 
 import java.util.Date;
 
@@ -8,6 +8,7 @@ public class Course {
 	private String course_credits;
 	private String day;
 	private String room;
+	private String time;
 	private String semester;
 	private String start_time;
 	private String end_time;
@@ -16,14 +17,15 @@ public class Course {
 		
 	}
 
-	public Course(String course_id, String course_name, String course_credits, String day, String room, String semester,
-			String start_time, String end_time) {
+	public Course(String course_id, String course_name, String course_credits, String day, String room, String time,
+			String semester, String start_time, String end_time) {
 		super();
 		this.course_id = course_id;
 		this.course_name = course_name;
 		this.course_credits = course_credits;
 		this.day = day;
 		this.room = room;
+		this.time = time;
 		this.semester = semester;
 		this.start_time = start_time;
 		this.end_time = end_time;
@@ -52,7 +54,7 @@ public class Course {
 	public void setCourse_credits(String course_credits) {
 		this.course_credits = course_credits;
 	}
-	
+
 	public String getDay() {
 		return day;
 	}
@@ -68,7 +70,15 @@ public class Course {
 	public void setRoom(String room) {
 		this.room = room;
 	}
-	
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
 	public String getSemester() {
 		return semester;
 	}
@@ -95,8 +105,11 @@ public class Course {
 
 	@Override
 	public String toString() {
-		return "Course [course_id=" + course_id + ", course_name=" + course_name + ", course_credits=" + course_credits + ", day=" + day
-				+ ", room=" + room + ", semester=" + semester + ", start_time=" + start_time + ", end_time=" + end_time + "]";
+		return "Course [course_id=" + course_id + ", course_name=" + course_name + ", course_credits=" + course_credits
+				+ ", day=" + day + ", room=" + room + ", time=" + time + ", semester=" + semester + ", start_time="
+				+ start_time + ", end_time=" + end_time + "]";
 	}
+
+
 	
 }

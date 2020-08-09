@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.Course;
-import bean.RegistrationForm;
-import bean.Student;
-import bean.UserAccount;
 import dao.ManageStudent;
+import model.Course;
+import model.RegistrationForm;
+import model.Student;
+import model.User;
 import utils.AppUtils;
 
 @WebServlet("/Save")
@@ -38,24 +38,32 @@ public class Save extends HttpServlet {
 		response.setContentType("text/html");
 		try {
 			HttpSession session = request.getSession();
-			UserAccount user = AppUtils.getLoginedUser(session);
+			User user = AppUtils.getLoginedUser(session);
 			String student_code = String.valueOf(user);
-//			String student_code = (String) session.getAttribute("userAcount");
-			String course_id = request.getParameter("cart_course_id");
-			String course_name = request.getParameter("cart_course_name");
-			String day = request.getParameter("cart_day");
-			String room = request.getParameter("cart_room");
-			String semester = request.getParameter("cart_semester");
-			String start_time = request.getParameter("cart_start");
-			String end_time = request.getParameter("cart_end");
-			RegistrationForm rf = new RegistrationForm(student_code, course_id, course_name, day, room, semester,
+			String course_id = request.getParameter("course_id");
+			String course_name = request.getParameter("course_name");
+			String day = request.getParameter("day");
+			String room = request.getParameter("room");
+			String time = request.getParameter("time");
+			String semester = request.getParameter("semester");
+			String start_time = request.getParameter("start");
+			String end_time = request.getParameter("end");
+			if(stm.checkExist(student_code, course_id, day, time)==false) {
+			RegistrationForm rf = new RegistrationForm(student_code, course_id, course_name, day, room, time, semester,
 					start_time, end_time);
+			System.out.println(rf);
 			stm.register(rf);
+			response.sendRedirect("Course");
+			}else {
+				String message = "Môn học đã được chọn !";
+				request.setAttribute("message", message);
+				request.getRequestDispatcher("Course").forward(request, response);
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("Course");
+		
 	}
 
 }

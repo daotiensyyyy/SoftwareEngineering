@@ -6,7 +6,7 @@
 <html lang="en">
 
 <!-- head -->
-<jsp:include page="WEB-INF/head/head.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/head/head.jsp"></jsp:include>
 <!---->
 <body>
 	<div class="parallax-mirror"
@@ -19,13 +19,53 @@
 		<!-- Header -->
 		<jsp:include page="/WEB-INF/header/header.jsp"></jsp:include>
 
+		<!-- Menu -->
+
+		<div
+			class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+			<div class="menu_close_container">
+				<div class="menu_close">
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<nav class="menu_nav">
+				<ul class="menu_mm">
+					<li class="menu_mm"><a href="#">Trang chủ</a></li>
+					<li class="menu_mm"><a href="Course">Đăng ký môn học</a></li>
+					<li class="menu_mm"><a href="#">Xem lịch học</a></li>
+					<li class="menu_mm"><a href="#">Xem điểm</a></li>
+					<li class="menu_mm"><a href="#">Xem học phí</a></li>
+					<li class="menu_mm"><a href="/STM/login"> <atext.request.contextPath}/login">
+							<span class="glyphicon glyphicon-user" style="color: black;"></span></a></li>
+				</ul>
+			</nav>
+			<div class="menu_extra">
+				<div class="menu_phone">
+					<span class="menu_title">phone:</span>(009) 35475 6688933 32
+				</div>
+				<div class="menu_social">
+					<span class="menu_title">follow us</span>
+					<ul>
+						<li><a href="https://technext.github.io/elearn/index.html#"><i
+								class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+						<li><a href="https://technext.github.io/elearn/index.html#"><i
+								class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="https://technext.github.io/elearn/index.html#"><i
+								class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						<li><a href="https://technext.github.io/elearn/index.html#"><i
+								class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
 		<!-- Milestones -->
 
 		<div class="milestones">
 			<!-- Background image artis https://unsplash.com/@thepootphotographer -->
 			<div class="parallax_background parallax-window"
-				data-parallax="scroll" data-image-src="Elearn_files\bg.jpg"
+				data-parallax="scroll" data-image-src="./Elearn_files/bg.jpg"
 				data-speed="0.8"></div>
 			<div class="container">
 				<div class="row milestones_container">

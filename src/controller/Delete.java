@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bean.Course;
 import dao.ManageStudent;
+import model.Course;
 
 @WebServlet("/Delete")
 public class Delete extends HttpServlet {

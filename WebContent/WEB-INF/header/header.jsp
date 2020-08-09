@@ -44,7 +44,7 @@
 						</div>
 						<nav class="main_nav_contaner ml-auto">
 							<ul class="main_nav">
-								<li class="active"><a style="text-decoration: none;"/home">Trang
+								<li class=""><a style="text-decoration: none;"/home">Trang
 										chủ</a></li>
 								<li><a style="text-decoration: none;" href="Course">Đăng
 										ký môn học</a></li>
@@ -59,10 +59,10 @@
 
 							</c:if>
 							<c:if test="${not empty loginedUser}">
-								<span style="color: gree; margin-right: 20px">
-									${loginedUser.userName} </span>
-								<a style="text-decoration: none; color: black;" href="${pageContext.request.contextPath}/logout"> Đăng
-									xuất </a> &nbsp;</a>
+								<span style="color: gree; margin-right: 20px">${loginedUser.username}</span>
+								<a style="text-decoration: none; color: black;"
+									href="${pageContext.request.contextPath}/logout"> Đăng xuất
+								</a> &nbsp;</a>
 							</c:if>
 							<!-- Hamburger -->
 
