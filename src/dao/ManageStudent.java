@@ -142,7 +142,7 @@ public class ManageStudent {
 		}
 		return (ArrayList<RegistrationForm>) list;
 	}
-	
+
 	public boolean checkExist(String course_id){
 		for (int i = 0; i < tmp.size(); i++) {
 			if(tmp.get(i).getCourse_id().equals(course_id)){
@@ -222,17 +222,16 @@ public class ManageStudent {
 		}
 		return (ArrayList<Course>) list;
 	}
-	
-	public boolean checkExist(String student_code, String course_id, String day, String time) {
+
+	public boolean checkExist(String student_code, String course_id) {
 		try {
 			ResultSet  rs=new DBConnect().selectFromDatabase("select * from registration where student_code='"+student_code+"' "
-					+ "and course_id='"+course_id+"' and day='"+day+"'and time='"+time+"'");
-			 while(rs.next()){
-				 if(rs.getString(1).equals(student_code) && rs.getString(2).equals(course_id)
-						 && rs.getString(4).equals(day)&& rs.getString(6).equals(time)){
-					 return true;
-				 }
-			 }
+					+ "and course_id='"+course_id+"'");
+			while(rs.next()){
+				if(rs.getString(1).equals(student_code) && rs.getString(2).equals(course_id)){
+					return true;
+				}
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
@@ -240,6 +239,21 @@ public class ManageStudent {
 		return false;
 	}
 
+	public boolean checkDay(String student_code, String day, String time) {
+		try {
+			ResultSet  rs=new DBConnect().selectFromDatabase("select * from registration where student_code='"+student_code+"'"
+					+ "and day='"+day+"'and time='"+time+"'");
+			while(rs.next()){
+				if(rs.getString(1).equals(student_code)&& rs.getString(4).equals(day)&& rs.getString(6).equals(time)){
+					return true;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+		return false;
+	}
 	
 	public static void main(String[] args) throws SQLException {
 		ManageStudent ms = new ManageStudent();

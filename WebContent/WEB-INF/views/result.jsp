@@ -27,12 +27,12 @@
         input#course_id, input#credits, input#day, input#room, input#start,
         input#end, input#semester, input#time {
             border: none;
-            width: 100px;
+            width: 80px;
         }
 
         input#course_name {
             border: none;
-            width: 200px;
+            width: 300px;
         }
 
         #selected {
@@ -143,6 +143,7 @@
                 <tbody>
 
                 <!-- lay danh sach mon hoc va hien thi len bang -->
+                <div><h4>${message }</h4></div>
                 <c:forEach items="${list }" var="course">
                     <tr>
                         <td><input id="course_id" type="text" class="input"
