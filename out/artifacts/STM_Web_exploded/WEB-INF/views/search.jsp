@@ -14,7 +14,7 @@
     function enableDisable(courseId) {
         //Reference the Button.
         var btnSubmit = document.getElementById("btnSubmit");
- 
+
         //Verify the TextBox value.
         if (courseId.value.trim() != "") {
             //Enable the TextBox when TextBox has value.
@@ -45,16 +45,12 @@ input#name {
 </style>
 <body>
 	<form id="search-form" action="Search" method="post">
-		<input type="text" list="dsTourName" id="courseId" name="course_id"
-			placeholder="Nhập mã môn học để tìm kiếm "  onkeyup="enableDisable(this)" /> 
+		<input type="text"  id="courseId" name="course_id"
+			placeholder="Nhập mã môn học để tìm kiếm "  onkeyup="enableDisable(this)" />
 		<input id="btnSubmit" type="submit" name="" value="Search" disabled="disabled">
 	</form>
-	<c:forEach items="${list}" var="tour">
-		<datalist id="dsTourName">
-			<option value="${tour.tenTour.toLowerCase().trim() }"></option>
-	</c:forEach>
-	</datalist>
-	<!-- 	<script type="text/javascript" > 
+
+	<!-- 	<script type="text/javascript" >
  	function xuLyLocTheoTen(){
  		var dsTourName = document.getElementById("name").value;
            window.location.href = 'TourController?dsTourName=' + document.getElementById('name').value;
