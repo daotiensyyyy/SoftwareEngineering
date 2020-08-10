@@ -42,7 +42,7 @@ public class CourseRegistration extends HttpServlet {
 		User user = AppUtils.getLoginedUser(session);
 		//kiem tra da dang nhap chua
 		if (user != null) {
-			System.out.println(user);
+//			System.out.println(user);
 			List<Course> list = stm.getListCourse();
 
 			request.setAttribute("lstCourse", list);

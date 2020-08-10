@@ -23,7 +23,7 @@ public class HomeServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		RequestDispatcher dispatcher //
-				= this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");
+				= this.getServletContext().getRequestDispatcher("/index.jsp");
 
 		dispatcher.forward(request, response);
 	}

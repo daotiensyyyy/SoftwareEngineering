@@ -1,0 +1,30 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="STM:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/STM_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="STM/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="STM" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="commons-logging-1.2.jar" module-name="STM" />
+          <element id="library" level="module" name="taglibs-standard-spec-1.2.5.jar" module-name="STM" />
+          <element id="library" level="module" name="taglibs-standard-impl-1.2.5.jar" module-name="STM" />
+          <element id="library" level="module" name="restfb-2.3.0.jar" module-name="STM" />
+          <element id="library" level="module" name="recaptcha4j-0.0.7.jar" module-name="STM" />
+          <element id="library" level="module" name="mysql-connector-java-8.0.17.jar" module-name="STM" />
+          <element id="library" level="module" name="mysql-connector-java-5.1.47-bin.jar" module-name="STM" />
+          <element id="library" level="module" name="jstl-1.2.jar" module-name="STM" />
+          <element id="library" level="module" name="javax.mail.jar" module-name="STM" />
+          <element id="library" level="module" name="javax.json-1.0.jar" module-name="STM" />
+          <element id="library" level="module" name="java-json.jar" module-name="STM" />
+          <element id="library" level="module" name="httpcore-4.4.9.jar" module-name="STM" />
+          <element id="library" level="module" name="httpclient-4.5.5.jar" module-name="STM" />
+          <element id="library" level="module" name="gson-2.8.2.jar" module-name="STM" />
+          <element id="library" level="module" name="fluent-hc-4.5.5.jar" module-name="STM" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

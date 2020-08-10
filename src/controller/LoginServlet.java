@@ -8,60 +8,66 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.xml.transform.sax.SAXSource;
 
 import model.User;
 import utils.AppUtils;
+import utils.CaptchaUtils;
 import utils.UserDAO;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public LoginServlet() {
-		super();
-	}
+    int count = 0;
 
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+    public LoginServlet() {
+        super();
+    }
 
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp");
-		dispatcher.forward(request, response);
-	}
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+        RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp");
+        dispatcher.forward(request, response);
+    }
 
-		String userName = request.getParameter("userName");
-		String password = request.getParameter("password");
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // lay thong tin mssv và password
+        String userName = request.getParameter("userName");
+        String password = request.getParameter("password");
 
-		User user = new UserDAO().checkLogin(userName, password);
+        boolean valid = true;
+        String errorMessage = "";
 
-		if (user.getUsername() == null) {
-			String errorMessage = "Tên đăng nhập hoặc mật khẩu không đúng";
-			request.setAttribute("errorMessage", errorMessage);
+        User user = new UserDAO().checkLogin(userName, password);
 
-			RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp");
-			dispatcher.forward(request, response);
-		} else {
-			AppUtils.storeLoginedUser(request.getSession(), user);
-			//
-			int redirectId = -1;
-			try {
-				redirectId = Integer.parseInt(request.getParameter("redirectId"));
-			} catch (Exception e) {
-			}
-			String requestUri = AppUtils.getRedirectAfterLoginUrl(request.getSession(), redirectId);
-			if (requestUri != null) {
-				response.sendRedirect(requestUri);
-			} else {
-				// Mặc định sau khi đăng nhập thành công
-				// chuyển hướng về trang /home
-//				request.getRequestDispatcher("/index.jsp").forward(request, response);
-				response.sendRedirect("/");
-			}
-		}
+        if (user.getUsername() == null && user.getPassword() == null) {
+            errorMessage = "Tên đăng nhập hoặc mật khẩu không đúng";
+            request.setAttribute("errorMessage", errorMessage);
+            request.getSession().setAttribute("captcha", "visible");
+            valid = false;
+        }
 
-	}
+        if (request.getSession().getAttribute("captcha") != null)
+            if (valid) {
+                String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
+                // Verify CAPTCHA.
+                valid = CaptchaUtils.verify(gRecaptchaResponse);
+                if (!valid)
+                    errorMessage = "Chưa xác thực captcha!";
+            }
+
+        if (!valid) {
+            request.setAttribute("errorMessage", errorMessage);
+            request.getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+        } else {
+            request.getSession().setAttribute("loginedUser", user);
+            response.sendRedirect(request.getContextPath() + "/");
+        }
+    }
 }

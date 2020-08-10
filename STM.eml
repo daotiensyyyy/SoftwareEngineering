@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/out/test/STM"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<excludeFolder url="file://$MODULE_DIR$/build"/>
+	</contentEntry>
+	<lib name="commons-logging-1.2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/commons-logging-1.2.jar!/"/>
+	</lib>
+	<lib name="fluent-hc-4.5.5.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/fluent-hc-4.5.5.jar!/"/>
+	</lib>
+	<lib name="gson-2.8.2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/gson-2.8.2.jar!/"/>
+	</lib>
+	<lib name="httpclient-4.5.5.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/httpclient-4.5.5.jar!/"/>
+	</lib>
+	<lib name="httpcore-4.4.9.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/httpcore-4.4.9.jar!/"/>
+	</lib>
+	<lib name="java-json.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/java-json.jar!/"/>
+	</lib>
+	<lib name="javax.json-1.0.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/javax.json-1.0.jar!/"/>
+	</lib>
+	<lib name="javax.mail.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/javax.mail.jar!/"/>
+	</lib>
+	<lib name="javax.servlet-3.0.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/javax.servlet-3.0.jar!/"/>
+	</lib>
+	<lib name="jstl-1.2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/jstl-1.2.jar!/"/>
+	</lib>
+	<lib name="mysql-connector-java-5.1.47-bin.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/mysql-connector-java-5.1.47-bin.jar!/"/>
+	</lib>
+	<lib name="mysql-connector-java-8.0.17.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/mysql-connector-java-8.0.17.jar!/"/>
+	</lib>
+	<lib name="recaptcha4j-0.0.7.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/recaptcha4j-0.0.7.jar!/"/>
+	</lib>
+	<lib name="restfb-2.3.0.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/restfb-2.3.0.jar!/"/>
+	</lib>
+	<lib name="taglibs-standard-impl-1.2.5.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar!/"/>
+	</lib>
+	<lib name="taglibs-standard-spec-1.2.5.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar!/"/>
+	</lib>
+</component>

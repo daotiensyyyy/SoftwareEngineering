@@ -9,7 +9,7 @@
 <!-- head -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Elearn</title>
+<title>Đăng ký môn học</title>
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Elearn project">
@@ -66,20 +66,19 @@ ul#pagination {
 /* only screen and (max-width: 760px), */
 /* (min-device-width: 768px) and (max-device-width: 1024px)  { */
 
-/* 	/* Force table to not be like tables anymore */ */
 /* 	table, thead, tbody, th, td, tr {  */
 /* 		display: block;  */
 /* 	} */
-	
+
 /* 	/* Hide table headers (but not display: none;, for accessibility) */ */
 /* 	thead tr {  */
 /* 		position: absolute; */
 /* 		top: -9999px; */
 /* 		left: -9999px; */
 /* 	} */
-	
+
 /* 	tr { border: 1px solid #ccc; } */
-	
+
 /* 	td {  */
 /* 		/* Behave  like a "row" */ */
 /* 		border: none; */
@@ -87,7 +86,7 @@ ul#pagination {
 /* 		position: relative; */
 /* 		padding-left: 50%;  */
 /* 	} */
-	
+
 /* 	td:before {  */
 /* 		/* Now like a table header */ */
 /* 		position: absolute; */
@@ -98,7 +97,7 @@ ul#pagination {
 /* 		padding-right: 10px;  */
 /* 		white-space: nowrap; */
 /* 	} */
-	
+
 /* 	/* */
 /* 	Label the data */
 /* 	*/ */
@@ -111,7 +110,7 @@ ul#pagination {
 /* 	td:nth-of-type(7):before { content: "Ngày bắt đầu"; } */
 /* 	td:nth-of-type(8):before { content: "Ngày kết thúc"; } */
 /* 	td:nth-of-type(9):before { content: ""; } */
-	
+
 /* } */
 </style>
 
@@ -147,7 +146,7 @@ ul#pagination {
 					<li class="menu_mm"><a href="#">Xem học phí</a></li>
 				</ul>
 			</nav>
-		
+
 		</div>
 
 		<!-- Milestones -->
@@ -183,11 +182,11 @@ ul#pagination {
 			<div class="table-responsive-lg">
 			<table class="table">
 				<thead class="thead-dark">
-						
+
 						<h4>
 							<b>DANH SÁCH MÔN HỌC</b>
 						</h4>
-									
+
 					<tr>
 						<th>Mã môn học</th>
 						<th>Tên môn học</th>
