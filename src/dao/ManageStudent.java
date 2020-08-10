@@ -142,35 +142,12 @@ public class ManageStudent {
 		}
 		return (ArrayList<RegistrationForm>) list;
 	}
-
-	public boolean checkExist(String student_code, String course_id) {
-		try {
-			ResultSet  rs=new DBConnect().selectFromDatabase("select * from registration where student_code='"+student_code+"' "
-					+ "and course_id='"+course_id+"'");
-			while(rs.next()){
-				if(rs.getString(1).equals(student_code) && rs.getString(2).equals(course_id)){
-					return true;
-				}
+	
+	public boolean checkExist(String course_id){
+		for (int i = 0; i < tmp.size(); i++) {
+			if(tmp.get(i).getCourse_id().equals(course_id)){
+				return true;
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println(e.getMessage());
-		}
-		return false;
-	}
-
-	public boolean checkDay(String student_code, String day, String time) {
-		try {
-			ResultSet  rs=new DBConnect().selectFromDatabase("select * from registration where student_code='"+student_code+"'"
-					+ "and day='"+day+"'and time='"+time+"'");
-			while(rs.next()){
-				if(rs.getString(1).equals(student_code)&& rs.getString(4).equals(day)&& rs.getString(6).equals(time)){
-					return true;
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println(e.getMessage());
 		}
 		return false;
 	}
@@ -184,15 +161,6 @@ public class ManageStudent {
 					tmp.add(listCourse.get(i));
 					return true;
 				}
-		}
-		return false;
-	}
-
-	public boolean checkExist(String course_id){
-		for (int i = 0; i < tmp.size(); i++) {
-			if(tmp.get(i).getCourse_id().equals(course_id)){
-				return true;
-			}
 		}
 		return false;
 	}
@@ -254,14 +222,30 @@ public class ManageStudent {
 		}
 		return (ArrayList<Course>) list;
 	}
-
+	
+	public boolean checkExist(String student_code, String course_id, String day, String time) {
+		try {
+			ResultSet  rs=new DBConnect().selectFromDatabase("select * from registration where student_code='"+student_code+"' "
+					+ "and course_id='"+course_id+"' and day='"+day+"'and time='"+time+"'");
+			 while(rs.next()){
+				 if(rs.getString(1).equals(student_code) && rs.getString(2).equals(course_id)
+						 && rs.getString(4).equals(day)&& rs.getString(6).equals(time)){
+					 return true;
+				 }
+			 }
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+		return false;
+	}
 
 	
 	public static void main(String[] args) throws SQLException {
 		ManageStudent ms = new ManageStudent();
 //		RegistrationForm rf = new RegistrationForm("2", "2","214282", "1", "1", "2", "2", "22","22");
 //		System.out.println(ms.getListStudent());
-		System.out.println(ms.getListCourse());
+//		System.out.println(ms.getListCourse());
 //		System.out.println(ms.getAllRegistration());
 //		System.out.println(ms.checkLogin("17130197", "123456"));
 //		ms.register(rf);
@@ -271,6 +255,6 @@ public class ManageStudent {
 //		System.out.println(ms.checkExist("214252"));
 //		System.out.println(ms.mapStudent.get("17130198"));
 //		System.out.println(ms.filterList("214370"));
-		System.out.println(ms.checkExist("17130084", "214451"));
+//		System.out.println(ms.checkExist("17130197", "214451", "5", "7"));
 	}
 }

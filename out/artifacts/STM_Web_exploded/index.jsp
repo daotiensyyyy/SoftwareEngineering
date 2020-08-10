@@ -79,10 +79,6 @@
                                 </div>
                                 <div class="home_text">
                                     <div class="home_title">Đại học Nông Lâm TP.HCM</div>
-                                    <div class="home_subtitle">Maecenas rutrum viverra
-                                        sapien sed fermentum. Morbi tempor odio eget lacus tempus
-                                        pulvinar. Praesent vel nisl fermentum, gravida augue ut,
-                                        fermentum ipsum.</div>
                                 </div>
                             </div>
                         </div>
@@ -100,12 +96,74 @@
 
                 <!-- Why Choose Us -->
 
+                <div class="col-lg-4 grouped_col">
+                    <div class="grouped_title">Why Choose Us?</div>
+                    <div class="accordions">
 
+                        <div class="accordion_container">
+                            <div class="accordion d-flex flex-row align-items-center">
+                                <div>Vehicula nisi congue, blandit?</div>
+                            </div>
+                            <div class="accordion_panel">
+                                <div>
+                                    <p>Suspendisse tincidunt magna eget massa hendrerit
+                                        efficitur. Ut euismod pellentesque imperdiet. Cras laoreet
+                                        gravida lectus, at viverra lorem venenatis in. Aenean id
+                                        varius quam.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion_container">
+                            <div class="accordion d-flex flex-row align-items-center">
+                                <div>Vehicula nisi congue, blandit?</div>
+                            </div>
+                            <div class="accordion_panel">
+                                <div>
+                                    <p>Suspendisse tincidunt magna eget massa hendrerit
+                                        efficitur. Ut euismod pellentesque imperdiet. Cras laoreet
+                                        gravida lectus, at viverra lorem venenatis in. Aenean id
+                                        varius quam.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion_container">
+                            <div class="accordion d-flex flex-row align-items-center">
+                                <div>Mauris vehicula nisi congue?</div>
+                            </div>
+                            <div class="accordion_panel">
+                                <div>
+                                    <p>Suspendisse tincidunt magna eget massa hendrerit
+                                        efficitur. Ut euismod pellentesque imperdiet. Cras laoreet
+                                        gravida lectus, at viverra lorem venenatis in. Aenean id
+                                        varius quam.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion_container">
+                            <div class="accordion d-flex flex-row align-items-center">
+                                <div>Nisi congue, blandit purus sed?</div>
+                            </div>
+                            <div class="accordion_panel">
+                                <div>
+                                    <p>Suspendisse tincidunt magna eget massa hendrerit
+                                        efficitur. Ut euismod pellentesque imperdiet. Cras laoreet
+                                        gravida lectus, at viverra lorem venenatis in. Aenean id
+                                        varius quam.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
 
                 <!-- Events -->
 
-                <div class="col-lg-6 grouped_col">
-                    <div class="grouped_title">Hoạt động</div>
+                <div class="col-lg-4 grouped_col">
+                    <div class="grouped_title">Upcoming Events</div>
                     <div class="events">
 
                         <!-- Event -->
@@ -115,14 +173,15 @@
                                 <div
                                         class="event_date d-flex flex-column align-items-center justify-content-center">
                                     <div class="event_day">20</div>
-                                    <div class="event_month">tháng 4</div>
+                                    <div class="event_month">April</div>
                                 </div>
                             </div>
                             <div class="event_body">
                                 <div class="event_title">
-                                    <a href="https://technext.github.io/elearn/index.html#">Hiến máu tình nguyện</a>
+                                    <a href="https://technext.github.io/elearn/index.html#">New
+                                        Marketing Course Release</a>
                                 </div>
-                                <div class="event_subtitle">Địa điểm: PV123</div>
+                                <div class="event_subtitle">Location: Online Platform</div>
                             </div>
                         </div>
 
@@ -133,37 +192,102 @@
                                 <div
                                         class="event_date d-flex flex-column align-items-center justify-content-center">
                                     <div class="event_day">23</div>
-                                    <div class="event_month">tháng 8</div>
+                                    <div class="event_month">April</div>
                                 </div>
                             </div>
                             <div class="event_body">
                                 <div class="event_title">
-                                    <a href="https://technext.github.io/elearn/index.html#">Làm lồng đèn trung thu</a>
+                                    <a href="https://technext.github.io/elearn/index.html#">Students
+                                        Art Workshop</a>
                                 </div>
-                                <div class="event_subtitle">Địa điểm: PV123</div>
+                                <div class="event_subtitle">Location: Online Platform</div>
                             </div>
                         </div>
 
+                        <!-- Event -->
+                        <div
+                                class="event d-flex flex-row align-items-start justify-content-start">
+                            <div>
+                                <div
+                                        class="event_date d-flex flex-column align-items-center justify-content-center">
+                                    <div class="event_day">25</div>
+                                    <div class="event_month">April</div>
+                                </div>
+                            </div>
+                            <div class="event_body">
+                                <div class="event_title">
+                                    <a href="https://technext.github.io/elearn/index.html#">Launch
+                                        Party for a new Platform</a>
+                                </div>
+                                <div class="event_subtitle">Location: Online Platform</div>
+                            </div>
+                        </div>
 
+                        <!-- Event -->
+                        <div
+                                class="event d-flex flex-row align-items-start justify-content-start">
+                            <div>
+                                <div
+                                        class="event_date d-flex flex-column align-items-center justify-content-center">
+                                    <div class="event_day">27</div>
+                                    <div class="event_month">April</div>
+                                </div>
+                            </div>
+                            <div class="event_body">
+                                <div class="event_title">
+                                    <a href="https://technext.github.io/elearn/index.html#">New
+                                        Marketing Course</a>
+                                </div>
+                                <div class="event_subtitle">Location: Online Platform</div>
+                            </div>
+                        </div>
+
+                        <!-- Event -->
+                        <div
+                                class="event d-flex flex-row align-items-start justify-content-start">
+                            <div>
+                                <div
+                                        class="event_date d-flex flex-column align-items-center justify-content-center">
+                                    <div class="event_day">29</div>
+                                    <div class="event_month">April</div>
+                                </div>
+                            </div>
+                            <div class="event_body">
+                                <div class="event_title">
+                                    <a href="https://technext.github.io/elearn/index.html#">New
+                                        Marketing Course</a>
+                                </div>
+                                <div class="event_subtitle">Location: Online Platform</div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
 
                 <!-- News -->
 
-                <div class="col-lg-6 grouped_col">
-                    <div class="grouped_title">Thông báo mới</div>
+                <div class="col-lg-4 grouped_col">
+                    <div class="grouped_title">Latest News</div>
                     <div class="news">
 
                         <!-- News Post -->
                         <div
                                 class="news_post d-flex flex-row align-items-start justify-content-start">
                             <div>
+                                <div class="news_post_image">
+                                    <img src="./Elearn_files/news_1.jpg"
+                                         alt="https://unsplash.com/@beccatapert">
+                                </div>
                             </div>
                             <div class="news_post_body">
-                                <div class="news_post_date">27-06-2020</div>
+                                <div class="news_post_date">April 02, 2018</div>
                                 <div class="news_post_title">
-                                    <a href="#">Đăng ký môn học 2020-2021</a>
+                                    <a href="https://technext.github.io/elearn/news.html">Why
+                                        Choose online education?</a>
+                                </div>
+                                <div class="news_post_author">
+                                    By <a href="https://technext.github.io/elearn/index.html#">William
+                                    Smith</a>
                                 </div>
                             </div>
                         </div>
@@ -172,14 +296,21 @@
                         <div
                                 class="news_post d-flex flex-row align-items-start justify-content-start">
                             <div>
-
+                                <div class="news_post_image">
+                                    <img src="./Elearn_files/news_2.jpg"
+                                         alt="https://unsplash.com/@nbb_photos">
+                                </div>
                             </div>
                             <div class="news_post_body">
-                                <div class="news_post_date">26-06-2020</div>
+                                <div class="news_post_date">April 02, 2018</div>
                                 <div class="news_post_title">
-                                    <a href="#">Lưu ý khi đăng ký môn học</a>
+                                    <a href="https://technext.github.io/elearn/news.html">Books,
+                                        Kindle or tablet?</a>
                                 </div>
-
+                                <div class="news_post_author">
+                                    By <a href="https://technext.github.io/elearn/index.html#">William
+                                    Smith</a>
+                                </div>
                             </div>
                         </div>
 
@@ -187,18 +318,45 @@
                         <div
                                 class="news_post d-flex flex-row align-items-start justify-content-start">
                             <div>
-
+                                <div class="news_post_image">
+                                    <img src="./Elearn_files/news_3.jpg"
+                                         alt="https://unsplash.com/@rawpixel">
+                                </div>
                             </div>
                             <div class="news_post_body">
-                                <div class="news_post_date">25-06-2020</div>
+                                <div class="news_post_date">April 02, 2018</div>
                                 <div class="news_post_title">
-                                    <a href="">Thông báo lịch thi học kì 2 năm học 2019-2020</a>
+                                    <a href="https://technext.github.io/elearn/news.html">Why
+                                        Choose online education?</a>
                                 </div>
-
+                                <div class="news_post_author">
+                                    By <a href="https://technext.github.io/elearn/index.html#">William
+                                    Smith</a>
+                                </div>
                             </div>
                         </div>
 
-
+                        <!-- News Post -->
+                        <div
+                                class="news_post d-flex flex-row align-items-start justify-content-start">
+                            <div>
+                                <div class="news_post_image">
+                                    <img src="./Elearn_files/news_4.jpg"
+                                         alt="https://unsplash.com/@jtylernix">
+                                </div>
+                            </div>
+                            <div class="news_post_body">
+                                <div class="news_post_date">April 02, 2018</div>
+                                <div class="news_post_title">
+                                    <a href="https://technext.github.io/elearn/news.html">Books,
+                                        Kindle or tablet?</a>
+                                </div>
+                                <div class="news_post_author">
+                                    By <a href="https://technext.github.io/elearn/index.html#">William
+                                    Smith</a>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

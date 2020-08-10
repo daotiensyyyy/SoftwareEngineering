@@ -27,12 +27,12 @@
 input#course_id, input#credits, input#day, input#room, input#start,
 	input#end, input#semester, input#time {
 	border: none;
-	width:80px;
+	width:100px;
 }
 
 input#course_name {
 	border: none;
-	width: 300px;
+	width: 200px;
 }
 
 #selected {
@@ -46,17 +46,17 @@ input#course_name {
 .table td, .table th{
 	padding: 0 !important;
 	padding-top: 10px;
-
+	
 }
 ul#pagination {
 	display: flex;
 	flex-wrap: wrap;
-
+	
 	justify-content: center;
 	-webkit-justify-content: flex-end;
 }
-</style>
-
+</style>	
+	
 </head>
 <!---->
 <body>
@@ -89,7 +89,7 @@ ul#pagination {
 					<li class="menu_mm"><a href="#">Xem học phí</a></li>
 				</ul>
 			</nav>
-
+			
 		</div>
 
 		<!-- Milestones -->
@@ -110,7 +110,7 @@ ul#pagination {
 									</div>
 									<div class="home_text">
 										<div class="home_title">Danh sách môn học đã chọn</div>
-
+								
 									</div>
 								</div>
 							</div>
@@ -169,7 +169,7 @@ ul#pagination {
 		<br>
 		<div><a href="index.jsp">Trở về trang chủ</a></div>
 		<div><a href="Course">Tiếp tục đăng ký</a></div>
-
+		
 
 	</div>
 

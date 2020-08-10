@@ -25,10 +25,6 @@ public class Search extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String course_id = request.getParameter("course_id");
 		ArrayList<Course> dsLoc = new ManageStudent().filterList(course_id);
-		if(dsLoc.isEmpty()) {
-			String message = "Không có môn học được mở";
-			request.setAttribute("message", message);
-		}
 		List<Course> list_cart = new ManageStudent().getTmp();
 		request.setAttribute("lstCart", list_cart);
 		request.setAttribute("list", dsLoc);

@@ -48,20 +48,15 @@ public class Save extends HttpServlet {
 			String semester = request.getParameter("semester");
 			String start_time = request.getParameter("start");
 			String end_time = request.getParameter("end");
-			if(stm.checkExist(student_code, course_id)==false && stm.checkDay(student_code, day, time)==false) {
-				RegistrationForm rf = new RegistrationForm(student_code, course_id, course_name, day, room, time, semester, start_time, end_time);
-				System.out.println(rf);
-				stm.register(rf);
-				response.sendRedirect("Course");
+			if(stm.checkExist(student_code, course_id, day, time)==false) {
+			RegistrationForm rf = new RegistrationForm(student_code, course_id, course_name, day, room, time, semester,
+					start_time, end_time);
+			System.out.println(rf);
+			stm.register(rf);
+			response.sendRedirect("Course");
 			}else {
-				if(stm.checkExist(student_code, course_id)==true) {
-					String message = "Môn học "+course_name+ " đã được chọn !";
-					request.setAttribute("message", message);
-				}
-				else {
-					String message = "Trùng lịch học ! (Thứ " + day + " tiết "+ time + ")";
-					request.setAttribute("message", message);
-				}
+				String message = "Môn học đã được chọn !";
+				request.setAttribute("message", message);
 				request.getRequestDispatcher("Course").forward(request, response);
 			}
 		} catch (SQLException e) {
